@@ -2,125 +2,129 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>zvint&#x27;s sass code-style guide</title>
-  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zvint&#x27;s sass code-style guide</title>
+    <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
 
 <body class="stackedit">
 <div class="stackedit__left">
-  <div class="stackedit__toc">
+    <div class="stackedit__toc">
 
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#naming-conventions">1 - Naming conventions</a>
         <ul>
-          <li><a href="#functions-and-mixins">1.1 - Functions and mixins</a></li>
-          <li><a href="#variables">1.2 - Variables</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#naming-conventions">1 - Naming conventions</a>
+                <ul>
+                    <li><a href="#functions-and-mixins">1.1 - Functions and mixins</a></li>
+                    <li><a href="#variables">1.2 - Variables</a></li>
+                    <li><a href="#module-namespaces">1.3 - Module namespaces</a></li>
+                </ul>
+            </li>
+            <li><a href="#code-style">2 - Code style</a>
+                <ul>
+                    <li><a href="#any-syntax">2.1 - Any syntax</a></li>
+                    <li><a href="#scss-syntax">2.2 - SCSS syntax</a></li>
+                </ul>
+            </li>
         </ul>
-      </li>
-      <li><a href="#code-style">2 - Code style</a>
-        <ul>
-          <li><a href="#any-syntax">2.1 - Any syntax</a></li>
-          <li><a href="#scss-syntax">2.2 - SCSS syntax</a></li>
-        </ul>
-      </li>
-    </ul>
 
-  </div>
+    </div>
 </div>
 <div class="stackedit__right">
-  <div class="stackedit__html">
-    <p><strong>zvint’s sass code-style guideline</strong></p>
-    <h1 id="introduction">Introduction</h1>
-    <p><em><strong>Sass</strong></em> is a relatively small but extremely powerful scripting language in order to style web components. It is also very popular, which makes up for a lot of diversity, especially when it comes to whether one should even use a CSS preprocessor or opt-in for alternatives (like CSS in JS).</p>
-    <p>If you are one of the majority of people that like having separation of concerns by dividing your <em>app</em> and <em>style</em>, it must be understood that it is as important to have conventions for the code of your <em>app</em>, as well as for your <em>styling</em>. Having inconsistent code-styles may not harm or interest your workflow, but it helps a ton when collaborating with others - and also if you come back later to inspect your old code.</p>
-    <p>This specific guideline, as simple as it seems, will speed up your efficiency and will improve finding bugs significantly.  Well, let’s get into it, shall we?</p>
-    <blockquote>
-      <p>This guideline has no explicit opinion about CSS features primarily. It is mainly opinionated about Sass and only contains a few points that also apply to CSS in Sass.</p>
-    </blockquote>
-    <blockquote>
-      <p>This document contains guidelines for Sass and SCSS. SCSS and “the indented syntax” are understood under “Sass” and it is explicitly mentioned if only SCSS or “the indented syntax” is targeted.</p>
-    </blockquote>
-    <h1 id="naming-conventions">1 - Naming conventions</h1>
-    <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
-    <p>Since there already is a language-specific distinction between a <em>mixin</em> and <em>function</em>, both are named the same way. Although both are named with the same schema, there is a (also native) distinction between a private and public function or mixin.</p>
-    <blockquote>
-      <p>The reason we separate the naming convention of private and public functions and mixins is to immediately show the user the visibility of a function and whether it is accessible.</p>
-    </blockquote>
-    <h3 id="public-functions-and-mixins">1.1.1 - Public functions and mixins</h3>
-    <p>Functions that are accessible publicly are written in lower <code>kebab-case</code>.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-public-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <div class="stackedit__html">
+        <p><strong>zvint’s sass code-style guideline</strong></p>
+        <h1 id="introduction">Introduction</h1>
+        <p><em><strong>Sass</strong></em> is a relatively small but extremely powerful scripting language in order to style web components. It is also very popular, which makes up for a lot of diversity, especially when it comes to whether one should even use a CSS preprocessor or opt-in for alternatives (like CSS in JS).</p>
+        <p>If you are one of the majority of people that like having separation of concerns by dividing your <em>app</em> and <em>style</em>, it must be understood that it is as important to have conventions for the code of your <em>app</em>, as well as for your <em>styling</em>. Having inconsistent code-styles may not harm or interest your workflow, but it helps a ton when collaborating with others - and also if you come back later to inspect your old code.</p>
+        <p>This specific guideline, as simple as it seems, will speed up your efficiency and will improve finding bugs significantly.  Well, let’s get into it, shall we?</p>
+        <blockquote>
+            <p>This guideline has no explicit opinion about CSS features primarily. It is mainly opinionated about Sass and only contains a few points that also apply to CSS in Sass.</p>
+        </blockquote>
+        <blockquote>
+            <p>This document contains guidelines for Sass and SCSS. SCSS and “the indented syntax” are understood under “Sass” and it is explicitly mentioned if only SCSS or “the indented syntax” is targeted.</p>
+        </blockquote>
+        <h1 id="naming-conventions">1 - Naming conventions</h1>
+        <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
+        <p>Since there already is a language-specific distinction between a <em>mixin</em> and <em>function</em>, both are named the same way. Although both are named with the same schema, there is a (also native) distinction between a private and public function or mixin.</p>
+        <blockquote>
+            <p>The reason we separate the naming convention of private and public functions and mixins is to immediately show the user the visibility of a function and whether it is accessible.</p>
+        </blockquote>
+        <h3 id="public-functions-and-mixins">1.1.1 - Public functions and mixins</h3>
+        <p>Functions that are accessible publicly are written in lower <code>kebab-case</code>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-public-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token comment">// or as a mixin</span>
 <span class="token keyword">@mixin</span> <span class="token function">my-public-mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-    <h3 id="private-functions-and-mixins">1.1.2 - Private functions and mixins</h3>
-    <p>Functions and mixins that are supposed to be private  are prefixed with an underscore (<code>_</code>), followed by lower <code>snake_case</code>.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> _my_private_<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <h3 id="private-functions-and-mixins">1.1.2 - Private functions and mixins</h3>
+        <p>Functions and mixins that are supposed to be private  are prefixed with an underscore (<code>_</code>), followed by lower <code>snake_case</code>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> _my_private_<span class="token function">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token comment">// or as a mixin</span>
 <span class="token keyword">@mixin</span> _my_private_<span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-    <h2 id="variables">1.2 - Variables</h2>
-    <p>Every variable that is <em>not</em> a parameter is always written in <code>camelCase</code> unless stated otherwise.</p>
-    <h3 id="parameters">1.2.1 - Parameters</h3>
-    <p>Every parameter that is <em>not</em> a variable-argument is prefixed with <code>p</code> followed by <code>PascalCase</code>,</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$pFoo</span>, <span class="token variable">$pBar</span><span class="token punctuation">)</span>
+        <h2 id="variables">1.2 - Variables</h2>
+        <p>Every variable that is <em>not</em> a parameter is always written in <code>camelCase</code> unless stated otherwise.</p>
+        <h3 id="parameters">1.2.1 - Parameters</h3>
+        <p>Every parameter that is <em>not</em> a variable-argument is prefixed with <code>p</code> followed by <code>PascalCase</code>,</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$pFoo</span>, <span class="token variable">$pBar</span><span class="token punctuation">)</span>
 </code></pre>
-    <p>whereas a variable-argument is prefixed with <code>va</code> and also followed by <code>PascalCase</code>.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$vaFooBars</span><span class="token number">...</span><span class="token punctuation">)</span>
+        <p>whereas a variable-argument is prefixed with <code>va</code> and also followed by <code>PascalCase</code>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$vaFooBars</span><span class="token number">...</span><span class="token punctuation">)</span>
 </code></pre>
-    <h3 id="locally-scoped-variables">1.2.2 - Locally-scoped variables</h3>
-    <p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code> (as described in <a href="#variables">1.2 - Variables</a>).</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... local scope</span>
+        <h3 id="locally-scoped-variables">1.2.2 - Locally-scoped variables</h3>
+        <p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code> (as described in <a href="#variables">1.2 - Variables</a>).</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... local scope</span>
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
-    <p><em><a href="https://sass-lang.com/documentation/variables#scope">Sass: learn about scopes</a></em></p>
-    <h3 id="globally-scoped-constants">1.2.3 - Globally-scoped constants</h3>
-    <p>If a privately declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
-    <blockquote>
-      <p>⚠️ There is no physical constness as of version 1.57, so there is no guarantee a variable is never mutated after its initial declaration. It just serves as a hint, or recommendation.</p>
-    </blockquote>
-    <p>This convention really is only applicable if a global is <em>private</em>, since anything acquiring the variable may override or oversee the intended logical constness.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... global scope</span>
+        <p><em><a href="https://sass-lang.com/documentation/variables#scope">Sass: learn about scopes</a></em></p>
+        <h3 id="globally-scoped-constants">1.2.3 - Globally-scoped constants</h3>
+        <p>If a privately declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
+        <blockquote>
+            <p>⚠️ There is no physical constness as of version 1.57, so there is no guarantee a variable is never mutated after its initial declaration. It just serves as a hint, or recommendation.</p>
+        </blockquote>
+        <p>This convention really is only applicable if a global is <em>private</em>, since anything acquiring the variable may override or oversee the intended logical constness.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... global scope</span>
 <span class="token property"><span class="token variable">$_GLOBAL_PRIVATE_CONSTANT</span></span><span class="token punctuation">:</span> fooBar<span class="token punctuation">;</span>
 </code></pre>
-    <h1 id="code-style">2 - Code style</h1>
-    <h2 id="any-syntax">2.1 - Any syntax</h2>
-    <h3 id="character-limit">2.1.1 - Character limit</h3>
-    <p>Every line has a maximum character limit of 110.</p>
-    <h3 id="parameter-limit">2.1.2 - Parameter limit</h3>
-    <p>The maximum number of parameters is indefinite, but from a visual perspective a function or mixin should not have more than 6 (six) individually named parameters in its signature.<br>
-      If your code requires you to pass more parameters than is recommended, reconsider your implementation.</p>
-    <h2 id="scss-syntax">2.2 - SCSS syntax</h2>
-    <h3 id="indentation">2.2.1 - Indentation</h3>
-    <p>Each substatement of a statement should be indented by 2 (two) whitespace characters.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@if</span> <span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <h2 id="module-namespaces">1.3 - Module namespaces</h2>
+        <p>The namespace of a module must always be in <code>snake_case</code>. Since the namespace of a module is implicitly its base file name*, the casing also applies for every Sass file name. This also applies for when you define a custom namespace in an import statement, so when giving a module an explicit namespace using <a href="https://sass-lang.com/documentation/at-rules/use#choosing-a-namespace"><code>@use &lt;url&gt; as &lt;namespace&gt;</code></a>.</p>
+        <p><em><code>*</code> By default, a module’s namespace is just the last component of its URL without a file extension</em></p>
+        <h1 id="code-style">2 - Code style</h1>
+        <h2 id="any-syntax">2.1 - Any syntax</h2>
+        <h3 id="character-limit">2.1.1 - Character limit</h3>
+        <p>Every line has a maximum character limit of 110.</p>
+        <h3 id="parameter-limit">2.1.2 - Parameter limit</h3>
+        <p>The maximum number of parameters is indefinite, but from a visual perspective a function or mixin should not have more than 6 (six) individually named parameters in its signature.<br>
+            If your code requires you to pass more parameters than is recommended, reconsider your implementation.</p>
+        <h2 id="scss-syntax">2.2 - SCSS syntax</h2>
+        <h3 id="indentation">2.2.1 - Indentation</h3>
+        <p>Each substatement of a statement should be indented by 2 (two) whitespace characters.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@if</span> <span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@if</span> <span class="token punctuation">(</span>bar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token comment">// ...</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-    <h3 id="wrapping-and-formatting">2.2.2 - Wrapping and formatting</h3>
-    <p><strong>Map wrapping</strong><br>
-      In a map with more than 2 (two) key-value pairs, each key-value pair should be put on their own line followed by a comma at the end of each line, except for the last key-value pair.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        <h3 id="wrapping-and-formatting">2.2.2 - Wrapping and formatting</h3>
+        <p><strong>Map wrapping</strong><br>
+            In a map with more than 2 (two) key-value pairs, each key-value pair should be put on their own line followed by a comma at the end of each line, except for the last key-value pair.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token property">hello</span><span class="token punctuation">:</span> world,
   <span class="token property">foo</span><span class="token punctuation">:</span> bar,
   <span class="token property">baz</span><span class="token punctuation">:</span> qux
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-    <p><strong>List wrapping</strong><br>
-      In a list with more than 5 (five) elements, insert a newline character followed by the necessary <a href="#indentation">indentation</a> every five elements, or at whenever the line length would exceed the specified <a href="#character-limit">character limit</a>.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalList</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        <p><strong>List wrapping</strong><br>
+            In a list with more than 5 (five) elements, insert a newline character followed by the necessary <a href="#indentation">indentation</a> every five elements, or at whenever the line length would exceed the specified <a href="#character-limit">character limit</a>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalList</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token string">"foo"</span>, <span class="token string">"bar"</span>, <span class="token string">"foobar"</span>, <span class="token string">"baz"</span>, <span class="token string">"qux"</span>,
   <span class="token string">"quux"</span>, <span class="token string">"lorem"</span>, <span class="token string">"dolor"</span>, <span class="token string">"hello"</span>, <span class="token string">"world"</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-    <p>Although this usage of list-wrapping is recommended, it is pretty loose, so you don’t have to follow this one-to-one in order to follow the entire guideline.</p>
-    <h3 id="nesting">2.2.3 - Nesting</h3>
-    <p>There must not be more than 4 (four) nested scopes.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
+        <p>Although this usage of list-wrapping is recommended, it is pretty loose, so you don’t have to follow this one-to-one in order to follow the entire guideline.</p>
+        <h3 id="nesting">2.2.3 - Nesting</h3>
+        <p>There must not be more than 4 (four) nested scopes.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
 <span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@if</span> <span class="token punctuation">(</span>!foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">@if</span> <span class="token punctuation">(</span>!bar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -135,9 +139,9 @@
   <span class="token keyword">@if</span> <span class="token punctuation">(</span>not <span class="token punctuation">(</span>foo <span class="token operator">or</span> bar <span class="token operator">or</span> baz <span class="token operator">or</span> qux<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 <span class="token comment">// ...</span>
 </code></pre>
-    <h3 id="statement-and-semicolon">2.2.4 - Statement and semicolon</h3>
-    <p>Every statement that is not a control flow statement (<em>i.e. end with a scope</em>) must end with a semicolon (<code>;</code>) and a newline character. Every statement must be positioned on its own line.</p>
-    <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
+        <h3 id="statement-and-semicolon">2.2.4 - Statement and semicolon</h3>
+        <p>Every statement that is not a control flow statement (<em>i.e. end with a scope</em>) must end with a semicolon (<code>;</code>) and a newline character. Every statement must be positioned on its own line.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
 <span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@return</span> <span class="token string">"myValue"</span>
   <span class="token comment">//               ^ missing</span>
@@ -149,12 +153,12 @@
   <span class="token comment">//               ^</span>
 <span class="token punctuation">}</span>
 </code></pre>
-    <p><strong>Why?</strong> It makes your code more consistent, thus easier to read, debug and maintain. Wow, that’s a lot of advantages, isn’t it? 😅</p>
-    <hr>
-    <p>Well that’s a wrap! I hope you like this guideline.<br>
-      If you have suggestions you can DM me on Discord: <strong>@boned#0937</strong></p>
+        <p><strong>Why?</strong> It makes your code more consistent, thus easier to read, debug and maintain. Wow, that’s a lot of advantages, isn’t it? 😅</p>
+        <hr>
+        <p>Well that’s a wrap! I hope you like this guideline.<br>
+            If you have suggestions you can DM me on Discord: <strong>@boned#0937</strong></p>
 
-  </div>
+    </div>
 </div>
 </body>
 
