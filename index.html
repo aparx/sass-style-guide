@@ -52,7 +52,7 @@
         <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
         <p>Since there already is a language-specific distinction between a <em>mixin</em> and <em>function</em>, both are named the same way. Although both are named with the same schema, there is a (also native) distinction between a private and public function or mixin.</p>
         <blockquote>
-            <p>The reason we separate the naming convention of private and public functions and mixins is to immediately show the user the visibility of a function and whether it is accessible.</p>
+            <p>The reason we separate the naming convention of private and public functions and mixins is to immediately show the user a distinct difference in their visibility.</p>
         </blockquote>
         <h3 id="public-functions-and-mixins">1.1.1 - Public functions and mixins</h3>
         <p>Functions that are accessible publicly are written in lower <code>kebab-case</code>.</p>
@@ -86,13 +86,14 @@
         <blockquote>
             <p>⚠️ There is no physical constness as of <code>Dart Sass 1.57</code>, so there is no guarantee a variable is never mutated after its initial declaration. It just serves as a recommendation.</p>
         </blockquote>
-        <p>This convention really is only applicable if a global is <em>private</em>, since anything acquiring the variable may override or oversee the intended logical constness.</p>
+        <p>This convention really is only applicable if a global is <em>private</em>, since any external<br>
+            acquiring the variable may override or oversee the intended logical constness.</p>
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... global scope</span>
 <span class="token property"><span class="token variable">$_GLOBAL_PRIVATE_CONSTANT</span></span><span class="token punctuation">:</span> fooBar<span class="token punctuation">;</span>
 </code></pre>
         <h2 id="module-namespaces">1.3 - Module namespaces</h2>
         <p>The namespace of a module must always be in <code>snake_case</code>. Since the namespace of a module is implicitly its filename without extension*, the casing also applies for the name of every file that is intended to be used as a Sass module in other style files.</p>
-        <p>The above mentioned convention also applies for when you define a custom namespace in an import statement - so when giving a module an explicit namespace using <a href="https://sass-lang.com/documentation/at-rules/use#choosing-a-namespace"><code>@use &lt;url&gt; as &lt;namespace&gt;</code></a>.</p>
+        <p>The above convention also applies for when you define an explicit namespace using an import statement such as <a href="https://sass-lang.com/documentation/at-rules/use#choosing-a-namespace"><code>@use &lt;url&gt; as &lt;namespace&gt;</code></a>, where the implicit namespace is replaced by the explicit for the scope it is imported in.</p>
         <p><em><code>*</code> By default, a module’s namespace is just the last component of its URL without a file extension</em></p>
         <h1 id="code-style">2 - Code style</h1>
         <h2 id="any-syntax">2.1 - Any syntax</h2>
@@ -129,7 +130,7 @@
         <p>Although this usage of list-wrapping is recommended, it is pretty loose, so you don’t have to follow this one-to-one in order to follow this guideline.</p>
         <h3 id="nesting">2.2.3 - Nesting</h3>
         <p>There must not be more than 4 (four) nested scopes.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ BAD:</span>
 <span class="token selector">.selector </span><span class="token punctuation">{</span>
   <span class="token keyword">@if</span> <span class="token punctuation">(</span>!foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">@if</span> <span class="token punctuation">(</span>!bar<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -146,7 +147,7 @@
 </code></pre>
         <h3 id="semicolon">2.2.4 - Semicolon</h3>
         <p>If a semicolon can be placed after a statement, it shall be done. More formally, every statement that is not a control flow statement (<em>i.e. end with a scope</em>) must end with a semicolon (<code>;</code>) and a newline character.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ BAD:</span>
 <span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@return</span> <span class="token string">"myValue"</span>
   <span class="token comment">//               ^ missing</span>
