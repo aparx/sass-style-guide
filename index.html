@@ -26,7 +26,6 @@
           <li><a href="#scss-syntax">2.2 - SCSS syntax</a></li>
         </ul>
       </li>
-      <li></li>
     </ul>
 
   </div>
@@ -103,19 +102,22 @@
 <span class="token punctuation">}</span>
 </code></pre>
     <h3 id="wrapping-and-formatting">2.2.2 - Wrapping and formatting</h3>
-    <p>In a map with more than 2 (two) key-value pairs, each key-value pair should be put on their own line followed by a comma at the end of each line, except for the last key-value pair.</p>
+    <p><strong>Map wrapping</strong><br>
+      In a map with more than 2 (two) key-value pairs, each key-value pair should be put on their own line followed by a comma at the end of each line, except for the last key-value pair.</p>
     <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token property">hello</span><span class="token punctuation">:</span> world,
   <span class="token property">foo</span><span class="token punctuation">:</span> bar,
   <span class="token property">baz</span><span class="token punctuation">:</span> qux
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-    <p>In a list with more than 5 (five) elements, insert a newline followed by the necessary <a href="#indentation">indentation</a> every five elements, or at at whenever the line length would exceed the specified <a href="#character-limit">character limit</a>.</p>
+    <p><strong>List wrapping</strong><br>
+      In a list with more than 5 (five) elements, insert a newline followed by the necessary <a href="#indentation">indentation</a> every five elements, or at at whenever the line length would exceed the specified <a href="#character-limit">character limit</a>.</p>
     <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalList</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
-  <span class="token string">"foo"</span>, <span class="token string">"bar"</span>, <span class="token string">"foobar"</span>, <span class="token string">"baz"</span>, <span class="token string">"qux"</span>, <span class="token string">"quux"</span>,
-  <span class="token string">"lorem"</span>, <span class="token string">"dolor"</span>, <span class="token string">"hello"</span>, <span class="token string">"world"</span>
+  <span class="token string">"foo"</span>, <span class="token string">"bar"</span>, <span class="token string">"foobar"</span>, <span class="token string">"baz"</span>, <span class="token string">"qux"</span>,
+  <span class="token string">"quux"</span>, <span class="token string">"lorem"</span>, <span class="token string">"dolor"</span>, <span class="token string">"hello"</span>, <span class="token string">"world"</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
+    <p>This list-wrapping rule is pretty loose, so you don’t have to follow this one-to-one in order to follow the entire guideline.</p>
     <h3 id="nesting">2.2.3 - Nesting</h3>
     <p>There must not be more than 4 (four) nested scopes.</p>
     <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
@@ -148,7 +150,7 @@
 <span class="token punctuation">}</span>
 </code></pre>
     <p><strong>Why?</strong> It makes your code more consistent, thus easier to read, debug and maintain. Wow, that’s a lot of advantages, isn’t it? 😅</p>
-    <h1 id="section"></h1>
+    <hr>
     <p>Well that’s a wrap! I hope you like this guideline.<br>
       If you have suggestions you can DM me on Discord: <strong>@boned#0937</strong></p>
 
