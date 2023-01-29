@@ -84,7 +84,7 @@
         <h3 id="globally-scoped-constants">1.2.3 - Globally-scoped constants</h3>
         <p>If a privately declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
         <blockquote>
-            <p>⚠️ There is no physical constness as of <code>Dart Sass 1.57</code>, so there is no guarantee a variable is never mutated after its initial declaration. It just serves as a recommendation.</p>
+            <p>⚠️ There is no physical constness as of <code>Dart Sass 1.57</code>, so there is no guarantee a variable is never modified after its initial declaration. It just serves as a recommendation.</p>
         </blockquote>
         <p>This convention really is only applicable if a global is <em>private</em>, since any external<br>
             acquiring the variable may override or oversee the intended logical constness.</p>
