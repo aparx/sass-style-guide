@@ -11,7 +11,7 @@
 <body class="stackedit">
   <div class="stackedit__left">
     <div class="stackedit__toc">
-
+      
 <ul>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#naming-conventions">1 - Naming conventions</a>
@@ -46,7 +46,7 @@
 </blockquote>
 <h1 id="naming-conventions">1 - Naming conventions</h1>
 <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
-<p>Since there already is a language-specific distinction between a <em>mixin</em> and <em>function</em>, both are named the same way. Although both are named with the same schema, there is a (also native) distinction between a private and public function or mixin.</p>
+<p>Since there already is a language-specific distinction between a <em>mixin</em> and <em>function</em>, both are named the same way. Although both are named with the same schema, there is a (also native) distinction between a private and public function or mixin. In general, as stated in the <a href="#naming-conventions">Naming Conventions introduction</a>, a function or mixin is written in <code>camelCase</code>.</p>
 <blockquote>
 <p>The reason we separate the naming convention of private and public functions and mixins is to immediately show the user the visibility of a function and whether it is accessible.</p>
 </blockquote>
@@ -66,13 +66,13 @@
 <p>Every variable that is <em>not</em> a parameter is always written in <code>camelCase</code> unless stated otherwise.</p>
 <h3 id="parameters">1.2.1 - Parameters</h3>
 <p>Every parameter that is <em>not</em> a variable-argument is prefixed with <code>p</code> followed by <code>PascalCase</code>,</p>
-<pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token variable">$pFoo</span>, <span class="token variable">$pBar</span><span class="token punctuation">)</span>
+<pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$pFoo</span>, <span class="token variable">$pBar</span><span class="token punctuation">)</span>
 </code></pre>
 <p>whereas a variable-argument is prefixed with <code>va</code> and also followed by <code>PascalCase</code>.</p>
-<pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token variable">$vaFooBars</span><span class="token number">...</span><span class="token punctuation">)</span>
+<pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$vaFooBars</span><span class="token number">...</span><span class="token punctuation">)</span>
 </code></pre>
 <h3 id="locally-scoped-variables">1.2.2 - Locally-scoped variables</h3>
-<p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code> (as described in <a href="#variables">1.2</a>).</p>
+<p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code> (as described in <a href="#variables">1.2 - Variables</a>).</p>
 <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... local scope</span>
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
@@ -136,13 +136,13 @@ If your code requires you to pass more parameters than is recommended, reconside
 <h3 id="statement-and-semicolon">2.2.4 - Statement and semicolon</h3>
 <p>Every statement that is not a control flow statement (<em>i.e. end with a scope</em>) must end with a semicolon (<code>;</code>) and a newline character. Every statement must be positioned on its own line.</p>
 <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ VALID, BUT BAD:</span>
-<span class="token keyword">@function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@return</span> <span class="token string">"myValue"</span>
   <span class="token comment">//               ^ missing</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// ✅ GOOD:</span>
-<span class="token keyword">@function</span> <span class="token function">myFunction</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">@return</span> <span class="token string">"myValue"</span><span class="token punctuation">;</span>
   <span class="token comment">//               ^</span>
 <span class="token punctuation">}</span>
