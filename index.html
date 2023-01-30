@@ -107,14 +107,14 @@
         <blockquote>
             <p>Imports are done with double-quotes, since they use a URL.</p>
         </blockquote>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// SCSS; remove semicolons for indented syntax</span>
-@use <span class="token string">"foo_bar.scss"</span> as *<span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$_sentence</span></span><span class="token punctuation">:</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$_word</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <pre class=" language-sass"><code class="prism  language-sass"><span class="token comment">// indented sass syntax</span>
+<span class="token atrule-line"><span class="token atrule">@use</span> "foo_bar.scss" as *</span>
+<span class="token variable-line"><span class="token variable">$_sentence</span><span class="token punctuation">:</span> </span><span class="token string">"hello world"</span>
+<span class="token variable-line"><span class="token variable">$_word</span><span class="token punctuation">:</span> </span><span class="token string">'fooBar'</span>
 </code></pre>
         <p>If a string contains interpolation but no whitespace character, single-quotes are used, even if the interpolation contains whitespace.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// SCSS; remove semicolon for indented syntax</span>
-<span class="token property"><span class="token variable">$_sentenceWithPeriod</span></span><span class="token punctuation">:</span> <span class="token string">'#{$_sentence}.'</span><span class="token punctuation">;</span>
+        <pre class=" language-sass"><code class="prism  language-sass"><span class="token comment">// indented sass syntax</span>
+<span class="token variable-line"><span class="token variable">$_sentenceWithPeriod</span><span class="token punctuation">:</span> </span><span class="token string">'#{$_sentence}.'</span>
 </code></pre>
         <h2 id="scss-syntax">2.2 - SCSS syntax</h2>
         <h3 id="indentation">2.2.1 - Indentation</h3>
