@@ -58,7 +58,7 @@
         </blockquote>
         <h1 id="naming-conventions">1 - Naming conventions</h1>
         <p>Naming conventions give us a lot of advantages and are necessary when it comes to modern day software development. Naming conventions give us consistency, help us debug our code and help us use and name things, which, as we all know, is the hardest part of programming.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$_FooBar</span> <span class="token variable">$_FOO_BAR</span> <span class="token variable">$fooBar</span> <span class="token variable">$pFooBar</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$gFooBar</span> <span class="token variable">$_FOO_BAR</span> <span class="token variable">$fooBar</span> <span class="token variable">$pFooBar</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
         <p>Jokes aside, you will be able to intuitively recognize and distinguish the usages of every item in the example above after understanding the following conventions.</p>
         <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
@@ -91,16 +91,17 @@
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... local scope</span>
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
-        <h3 id="public-globals">1.2.3 - <em>Public</em> globals</h3>
-        <p>A globally declared variable that is <em>public</em> is written in <code>PascalCase</code>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$GlobalVariable</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <h3 id="globals">1.2.3 - Globals</h3>
+        <p>A global variable is written in either <code>camelCase</code> or <code>kebab-case</code> and uses a hyphen (<code>-</code>) to indicate private accessibility. <strong>Do <em>not</em></strong> use an underscore, as this may be confused with a <a href="#locals">local</a>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$publicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$-privateGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
 </code></pre>
-        <p><strong>Why?</strong> The reason we capatilize globals is to give a consistent distinction between locally declared variables and functions. This rather unconventional convention might remind you of conventions from object oriented programming languages, such as Java, where classes are capitilized to create a distinction between objects and items (such as functions and variables). In SCSS this helps immensly when dealing with many functions, globals and locals - that we deal with often in larger libraries.</p>
-        <h3 id="private-globals">1.2.4 - <em>Private</em> globals</h3>
-        <p>A globally declared variable that is supposed to be <em>private</em> is prefixed with an underscore (<code>_</code>) followed by <code>PascalCase</code>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_GlobalVariable</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <p>It is recommended to prefix your variable with <code>g</code>, but not required.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$gPublicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$-gPrivateGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
 </code></pre>
-        <h3 id="global-private-constants">1.2.5 - Global <em>private</em> constants</h3>
+        <p>Once you decided to adapt a certain style, use it for every file. <strong>Do <em>not</em></strong> mix and match, as that may cause confusion later on.</p>
+        <h3 id="global-private-constants">1.2.4 - Global <em>private</em> constants</h3>
         <p>If a <em>privately</em> declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
         <blockquote>
             <p>⚠️ There is no physical constness as of <code>Dart Sass 1.57</code>, so there is no guarantee a variable is never modified after its initial declaration. It just serves as a recommendation.</p>
