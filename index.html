@@ -79,7 +79,6 @@
 <span class="token keyword">@mixin</span> _my_private_<span class="token function">mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
         <h2 id="variables">1.2 - Variables</h2>
-        <p>Every variable that is <em>not</em> a parameter is always written in <code>camelCase</code> unless stated otherwise.</p>
         <h3 id="parameters">1.2.1 - Parameters</h3>
         <p>Every parameter that is <em>not</em> a variable-argument is prefixed with <code>p</code> followed by <code>PascalCase</code>,</p>
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$pFoo</span>, <span class="token variable">$pBar</span><span class="token punctuation">)</span>
@@ -88,7 +87,7 @@
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token variable">$vaFooBars</span><span class="token number">...</span><span class="token punctuation">)</span>
 </code></pre>
         <h3 id="locals">1.2.2 - Locals</h3>
-        <p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code> (as described in <a href="#variables">1.2 - Variables</a>).</p>
+        <p>A locally declared variable that is <em>not</em> a parameter is prefixed with an underscore (<code>_</code>) and followed by <code>camelCase</code>.</p>
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ... local scope</span>
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
