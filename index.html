@@ -163,13 +163,12 @@
         <p>If a semicolon can be placed after a statement, it shall be done. More formally, every statement that is not a control flow statement (<em>i.e. end with a scope</em>) must end with a semicolon (<code>;</code>) and a newline character.</p>
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token comment">// ⚠️ BAD:</span>
 <span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">@return</span> <span class="token string">"myValue"</span>
-  <span class="token comment">//               ^ missing</span>
+  <span class="token keyword">@return</span> <span class="token string">'myValue'</span>
 <span class="token punctuation">}</span>
 
 <span class="token comment">// ✅ GOOD:</span>
 <span class="token keyword">@function</span> <span class="token function">my-function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">@return</span> <span class="token string">"myValue"</span><span class="token punctuation">;</span>
+  <span class="token keyword">@return</span> <span class="token string">'myValue'</span><span class="token punctuation">;</span>
   <span class="token comment">//               ^</span>
 <span class="token punctuation">}</span>
 </code></pre>
