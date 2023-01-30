@@ -58,7 +58,7 @@
         </blockquote>
         <h1 id="naming-conventions">1 - Naming conventions</h1>
         <p>Naming conventions give us a lot of advantages and are necessary when it comes to modern day software development. Naming conventions give us consistency, help us debug our code and help us use and name things, which, as we all know, is the hardest part of programming.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$gFooBar</span> <span class="token variable">$_FOO_BAR</span> <span class="token variable">$fooBar</span> <span class="token variable">$pFooBar</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$pFooBar</span> <span class="token variable">$gFooBar</span> <span class="token variable">$_FooBar</span> <span class="token variable">$_FOO_BAR</span> <span class="token variable">$fooBar</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
         <p>Jokes aside, you will be able to intuitively recognize and distinguish the usages of every item in the example above after understanding the following conventions.</p>
         <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
@@ -92,13 +92,13 @@
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
         <h3 id="globals">1.2.3 - Globals</h3>
-        <p>A global variable is written in either <code>camelCase</code> or <code>kebab-case</code> and uses a hyphen (<code>-</code>) to indicate private accessibility. <strong>Do <em>not</em></strong> use an underscore, as this may be confused with a <a href="#locals">local</a>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$publicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$-privateGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <p>A global variable is written in <code>PascalCase</code> and uses an underscore (<code>_</code>) to indicate private accessibility.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$PublicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$_PublicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
 </code></pre>
-        <p>It is recommended to prefix your variable with <code>g</code>, but not required.</p>
+        <p>Alternatively, you can additionally prefix your variable with <code>g</code>, but is not required. This would make the code look like <code>camelCase</code>, that is found more often in public code bases.</p>
         <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$gPublicGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$-gPrivateGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$_gPrivateGlobal</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
 </code></pre>
         <p>Once you decided to adapt a certain style, use it for every file. <strong>Do <em>not</em></strong> mix and match, as that may cause confusion later on.</p>
         <h3 id="global-private-constants">1.2.4 - Global <em>private</em> constants</h3>
