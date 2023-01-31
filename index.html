@@ -92,30 +92,24 @@
 <span class="token property"><span class="token variable">$_localVariable</span></span><span class="token punctuation">:</span> fooBaz<span class="token punctuation">;</span>
 </code></pre>
         <h3 id="public-globals">1.2.3 - <em>Public</em> globals</h3>
-        <p>A globally declared variable with <em>public</em> access is written in  <code>kebab-case</code>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$public-global</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <p>Globally declared variables have two general ways to be written.</p>
+        <p><strong>Variant 1: style-specific globals</strong><br>
+            A global variable that can be applied to a css-property <em>and</em> is intented to be style-specific is written in <code>kebab-case</code>, using a hyphen (<code>-</code>) to indicate its private accessibility.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$background-color</span></span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$-background-color</span></span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
 </code></pre>
-        <h3 id="private-globals">1.2.4 - <em>Private</em> globals</h3>
-        <p>A  globally declared variable that should have <em>private</em> access has two ways to be written.</p>
-        <p>The first and most obvious is a hyphen (<code>-</code>) followed by <code>kebab-case</code>, which differs from <a href="#private-functions-and-mixins">private functions and mixins</a> and keeps it consistent with <a href="#public-globals">public globals</a>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$-private-global-first-variant</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <p>Keeps it consistent with <a href="#public-functions-and-mixins"><em>public</em></a>- and different with <a href="#private-functions-and-mixins"><em>private</em></a> functions and mixins. This also is compliant with most css namings and helps users to understand the styling-purpose.</p>
+        <p><strong>Variant 2: non-style-specific globals</strong><br>
+            A global variable that is <em><strong>not</strong></em> applicable to a css-property nor  intended to be style specific is written differently depending on its accessibility.</p>
+        <p>A <em>public</em> not style-specific global is written in <code>camelCase</code>.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$myPublicGlobalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-        <p>The second variant of writing a private global is to use an underscore (<code>_</code>) followed by <code>PascalCase</code>, which differs from <a href="#locals">locals</a> and <a href="#private-functions-and-mixins">private functions and mixins</a>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_PrivateGlobalSecondVariant</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <p>A <em>private</em> not style-specific global is written in <code>PascalCase</code> with an underscore (<code>_</code>) indicating its private accessibility.</p>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_MyPrivateGlobalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-        <p>Both private global naming conventions are allowed and recommended to be used depending on their privately intended purpose. For example, if a private global is intended for styling, the name should be written in <code>kebab-case</code>, since that complies with most css namings.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$-background-color</span></span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-<span class="token comment">// meant to be set to a css-property</span>
-</code></pre>
-        <p>If a private global is not intended to be specific to styling and/or cannot be applied to a css-property directly, the <code>PascalCase</code> variant should be used.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_ErrorModeMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token number">...</span><span class="token punctuation">)</span>
-<span class="token comment">// cannot be set to a css-property &amp; isn't meant to be</span>
-</code></pre>
-        <p>Be aware: these two options are <em><strong>only</strong></em> applying for <em><strong>private</strong></em> globals.</p>
-        <blockquote>
-            <p>The reason we separate between two variants of private globals is that we most often use a lot of (private) globals (and functions) that differ in their intended purposes. A naming convention that shows that purpose will speed up efficiency, readability and consistency.</p>
-        </blockquote>
-        <h3 id="global-private-constants">1.2.5 - Global <em>private</em> constants</h3>
+        <p><strong>Conclusion of both variants</strong><br>
+            Both variants are really useful to immediately show a user the purpose and intention of a global. Global variables that are meant for a sole style purpose are treated differently to variables that have no initial intention for styling or cannot be applied to a css-property directly.</p>
+        <h3 id="global-private-constants">1.2.4 - Global <em>private</em> constants</h3>
         <p>If a <em>privately</em> declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
         <blockquote>
             <p>⚠️ There is no physical constness as of <code>Dart Sass 1.57</code>, so there is no guarantee a variable is never modified after its initial declaration. It just serves as a recommendation.</p>
