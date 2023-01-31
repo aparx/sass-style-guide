@@ -113,7 +113,7 @@
 </code></pre>
         <p>Be aware: these two options are <em><strong>only</strong></em> applying for <em><strong>private</strong></em> globals.</p>
         <blockquote>
-            <p>The reason we separate between two variants of private globals is because most often we use a lot of (private) globals and (private) functions that differ in their usages, which requires a good naming convention to immediately show their intended purpose.</p>
+            <p>The reason we separate between two variants of private globals is that we most often use a lot of (private) globals (and functions) that differ in their intended purposes. A naming convention that shows that purpose will speed up efficiency, readability and consistency.</p>
         </blockquote>
         <h3 id="global-private-constants">1.2.5 - Global <em>private</em> constants</h3>
         <p>If a <em>privately</em> declared global is meant to be a constant, it is written in upper <code>SNAKE_CASE</code>. The variable may <em>not</em> be reassigned after the variable is declared once.</p>
