@@ -38,7 +38,6 @@
 <div class="stackedit__right">
     <div class="stackedit__html">
         <p><strong>zvint’s sass code guidelines</strong></p>
-        <p><em><strong>Warning:</strong> this document is still work in progress, so breaking changes may happen any time.</em></p>
         <h1 id="introduction">Introduction</h1>
         <p><em><strong>Sass</strong></em> is a relatively small but extremely powerful scripting language in order to style web components. It is also very popular, which makes up for a lot of diversity, especially when it comes to whether one should even use a CSS preprocessor or opt-in for alternatives (like CSS in JS).</p>
         <p>If you are one of the majority of people that like having separation of concerns by dividing your <em>app</em> and <em>style</em>, it must be understood that it is as important to have conventions for the code of your <em>app</em>, as well as for your <em>styling</em>. Having inconsistent code-styles may not harm or interest your workflow, but it helps a ton when collaborating with others - and also if you come back later to inspect your old code.</p>
@@ -58,7 +57,7 @@
         </blockquote>
         <h1 id="naming-conventions">1 - Naming conventions</h1>
         <p>Naming conventions give us a lot of advantages and are necessary when it comes to modern day software development. Naming conventions give us consistency, help us debug our code and help us use and name things, which, as we all know, is the hardest part of programming.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$pFooBar</span> <span class="token variable">$gFooBar</span> <span class="token variable">$_FooBar</span> <span class="token variable">$_FOO_BAR</span> <span class="token variable">$fooBar</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token variable">$_fooBar</span> <span class="token variable">$pFooBar</span> <span class="token variable">$fooBar</span> <span class="token variable">$_FooBar</span> <span class="token variable">$_FOO_BAR</span> _foo_<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token function">foo-bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> foo_bar
 </code></pre>
         <p>Jokes aside, you will be able to intuitively recognize and distinguish the usages of every item in the example above after understanding the following conventions.</p>
         <h2 id="functions-and-mixins">1.1 - Functions and mixins</h2>
@@ -136,12 +135,12 @@
         <blockquote>
             <p>Imports are done with double-quotes, since they use a URL.</p>
         </blockquote>
-        <pre class=" language-scss"><code class="prism  language-scss">@use <span class="token string">"foo_bar.scss"</span> as *<span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$_sentence</span></span><span class="token punctuation">:</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$_word</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
+        <pre class=" language-scss"><code class="prism  language-scss">@use <span class="token string">"foo_bar"</span> as baz_qux<span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$sentence</span></span><span class="token punctuation">:</span> <span class="token string">"hello world"</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$word</span></span><span class="token punctuation">:</span> <span class="token string">'fooBar'</span><span class="token punctuation">;</span>
 </code></pre>
         <p>If a string contains interpolation but no whitespace character, single-quotes are used, even if the interpolation contains whitespace.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_sentenceWithPeriod</span></span><span class="token punctuation">:</span> <span class="token string">'#{$_sentence}.'</span><span class="token punctuation">;</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$sentenceWithPeriod</span></span><span class="token punctuation">:</span> <span class="token string">'#{$sentence}.'</span><span class="token punctuation">;</span>
 </code></pre>
         <h2 id="scss-syntax">2.2 - SCSS syntax</h2>
         <h3 id="indentation">2.2.1 - Indentation</h3>
@@ -155,7 +154,7 @@
         <h3 id="line-wrap">2.2.2 - Line wrap</h3>
         <p><strong>Line wrap for maps</strong><br>
             In a map with more than 2 (two) key-value pairs, each key-value pair should be put on their own line followed by a comma at the end of each line, except for the last key-value pair.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$someGlobalMap</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token property">hello</span><span class="token punctuation">:</span> world,
   <span class="token property">foo</span><span class="token punctuation">:</span> bar,
   <span class="token property">baz</span><span class="token punctuation">:</span> qux
@@ -163,7 +162,7 @@
 </code></pre>
         <p><strong>Line wrap for lists</strong><br>
             In a list with more than 5 (five) elements, insert a newline character followed by the necessary <a href="#indentation">indentation</a> every five elements, or at whenever the line length would exceed the specified <a href="#character-limit">character limit</a>.</p>
-        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$_someLocalList</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
+        <pre class=" language-scss"><code class="prism  language-scss"><span class="token property"><span class="token variable">$someGlobalList</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>
   <span class="token string">"foo"</span>, <span class="token string">"bar"</span>, <span class="token string">"foobar"</span>, <span class="token string">"baz"</span>, <span class="token string">"qux"</span>,
   <span class="token string">"quux"</span>, <span class="token string">"lorem"</span>, <span class="token string">"dolor"</span>, <span class="token string">"hello"</span>, <span class="token string">"world"</span>
 <span class="token punctuation">)</span><span class="token punctuation">;</span>
